@@ -1,6 +1,6 @@
 <?php
 session_start();
-$parametres = json_decode(file_get_contents("parametres.json"), true);
+$parametres = json_decode(file_get_contents("../parametres.json"), true);
 if (!isset($_SESSION["pseudo"])){
     header("Location: pages/connexion.php");
 }
