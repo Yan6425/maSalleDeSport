@@ -1,0 +1,63 @@
+{
+    "Admin": {
+        "mdp": "Admin",
+        "mail": "admin@secretSanta.fr"
+    },
+    "Bob": {
+        "mdp": "1234",
+        "mail": "bob@secretSanta.fr",
+        "secretEnfant": null,
+        "blackList": [
+            "Bob",
+            "Alice"
+        ],
+        "banni": false
+    },
+    "Alice": {
+        "mdp": "1234",
+        "mail": "alice@secretSanta.fr",
+        "secretEnfant": null,
+        "blackList": [
+            "Alice"
+        ],
+        "banni": false
+    },
+    "Gabriel": {
+        "mdp": "1234",
+        "mail": "gabriel@secretSanta.fr",
+        "secretEnfant": null,
+        "blackList": [
+            "Gabriel"
+        ],
+        "banni": false
+    },
+    "Sylvain": {
+        "mdp": "1234",
+        "mail": "Sylvain@secretSanta.fr",
+        "secretEnfant": null,
+        "blackList": [
+            "Sylvain"
+        ],
+        "banni": false
+    },
+    "Ma\u00ebl": {
+        "mdp": "1234",
+        "mail": "ma\u00ebl@secretSanta.fr",
+        "secretEnfant": null,
+        "blackList": [
+            "Ma\u00ebl"
+        ],
+        "banni": false
+    },
+    "Quentin": {
+        "mdp": "1234",
+        "mail": "quentin@secretSanta.fr",
+        "secretEnfant": null,
+        "blackList": [
+            "Quentin",
+            "Sylvain",
+            "Ma\u00ebl"
+        ],
+        "banni": false
+    }
+}
