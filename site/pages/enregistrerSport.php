@@ -6,38 +6,31 @@
 //}
 include "../header.html"?>
 <?php
-$infoProfs = json_decode(file_get_contents("../../infoProfs.json"), true);
+$profSports = json_decode(file_get_contents("../../profSports.json"), true);
 //if ($_POST["nom"] == "" or $_POST["prenom"] == "" or $_POST["date"] == ""){
 //    header("Location : ajouterProf.php");
 //}
-$login = strtolower($_POST["prenom"])[0] . strtolower($_POST["nom"]);
-while (in_array($login, array_keys($infoProfs))) {
-    $login = $login . rand(0, 9);
-}
-$infoProfs[$login] = array(
-    "nom" => $_POST["nom"],
-    "prenom" => $_POST["prenom"],
-    "date" => $_POST["date"],
-    "mdp" => md5($login)
+$profSports[$_POST["prof"]] = array(
+    "sport1" => $_POST["sport1"],
+    "sport2" => $_POST["sport2"]
 );
-file_put_contents("../../infoProfs.json", json_encode($infoProfs, JSON_PRETTY_PRINT));
+file_put_contents("../../profSports.json", json_encode($profSports, JSON_PRETTY_PRINT));
 ?>
-<a href="ajouterProf.php">Ajouter un prof</a>
+<a href="ajouterSports.php">Ajouter un sport</a>
 <table>
     <thead>
         <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Date d'embauche</th>
+            <th>Prof</th>
+            <th>Sport 1</th>
+            <th>Sport 2</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($infoProfs as $pseudo => $info): ?>
+        <?php foreach ($profSports as $prof => $sports): ?>
             <tr>
-                <td><?php echo $info["nom"] ?></td>
-                <td><?php echo $info["prenom"] ?></td>
-                <td><?php echo $info["date"] ?></td>
-                <td><?php echo $pseudo ?></td>
+                <td><?php echo $prof ?></td>
+                <td><?php echo $sports["sport1"] ?></td>
+                <td><?php echo $sports["sport2"] ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

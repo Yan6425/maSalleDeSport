@@ -9,9 +9,11 @@ include "../header.html"?>
     <span id ="incorrect">Informations non complètes</span>
 <?php endif; ?>
 <form action="enregistrerProf.php" method="POST">
-    <p>Nom </p><input type="text" name="nom">
-    <p>Prénom </p><input type="text" name="prenom">
-    <p>Date d'embauche </p><input type="date" name="date">
+    <label>Nom </label><input type="text" name="nom">
+    <br>
+    <label>Prénom </label><input type="text" name="prenom">
+    <br>
+    <label>Date d'embauche </label><input type="date" name="date">
     <br>
     <button type="submit" value="ajouter">Ajouter</button>
 </form>
