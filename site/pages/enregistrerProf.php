@@ -29,6 +29,7 @@ file_put_contents("../../infoProfs.json", json_encode($infoProfs, JSON_PRETTY_PR
             <th>Nom</th>
             <th>Prénom</th>
             <th>Date d'embauche</th>
+            <th>Pseudo</th>
         </tr>
     </thead>
     <tbody>
