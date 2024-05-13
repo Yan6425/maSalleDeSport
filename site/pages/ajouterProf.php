@@ -1,10 +1,5 @@
-<!DOCTYPE html>
 <?php
-//session_start();
-//if (!isset($_SESSION["pseudo"]) || $_SESSION["pseudo"] != "Admin"){
-//    header("Location: ../index.php");
-//}
-include "../header.html"?>
+include "../header.php"?>
 <?php if(isset($_GET["incorrect"])): ?>
     <span id ="incorrect">Informations non complètes</span>
 <?php endif; ?>

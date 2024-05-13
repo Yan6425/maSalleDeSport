@@ -1,10 +1,5 @@
-<!DOCTYPE html>
 <?php
-//session_start();
-//if (!isset($_SESSION["pseudo"]) || $_SESSION["pseudo"] != "Admin"){
-//    header("Location: ../index.php");
-//}
-include "../header.html"?>
+include "../header.php"?>
 <?php
 $infoCours = json_decode(file_get_contents("../../infoCours.json"), true);
 ?>
@@ -22,15 +17,17 @@ $infoCours = json_decode(file_get_contents("../../infoCours.json"), true);
     </thead>
     <tbody>
         <?php foreach ($infoCours as $identifiant => $info): ?>
-            <tr>
-                <td><?php echo $identifiant ?></td>
-                <td><?php echo $info["prof"] ?></td>
-                <td><?php echo $info["date"] ?></td>
-                <td><?php echo $info["resume"] ?></td>
-                <td><?php echo $info["adresse"] ?></td>
-                <td><?php echo $info["sport"] ?></td>
-                <td><a href="inscriptionCours.php?identifiant=<?php echo $identifiant ?>"><button>Inscription</button></a></td>
-            </tr>
+            <?php if (strstr(strtolower($info["sport"]), strtolower($_POST["sport"]))): ?>
+                <tr>
+                    <td><?php echo $identifiant ?></td>
+                    <td><?php echo $info["prof"] ?></td>
+                    <td><?php echo $info["date"] ?></td>
+                    <td><?php echo $info["resume"] ?></td>
+                    <td><?php echo $info["adresse"] ?></td>
+                    <td><?php echo $info["sport"] ?></td>
+                    <td><a href="inscriptionCours.php?identifiant=<?php echo $identifiant ?>"><button>Inscription</button></a></td>
+                </tr>
+            <?php endif; ?>
         <?php endforeach; ?>
     </tbody>
 </table>

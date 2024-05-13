@@ -1,15 +1,7 @@
-<!DOCTYPE html>
 <?php
-//session_start();
-//if (!isset($_SESSION["pseudo"]) || $_SESSION["pseudo"] != "Admin"){
-//    header("Location: ../index.php");
-//}
-include "../header.html"?>
+include "../header.php"?>
 <?php
 $profSports = json_decode(file_get_contents("../../profSports.json"), true);
-//if ($_POST["nom"] == "" or $_POST["prenom"] == "" or $_POST["date"] == ""){
-//    header("Location : ajouterProf.php");
-//}
 $profSports[$_POST["prof"]] = array(
     "sport1" => $_POST["sport1"],
     "sport2" => $_POST["sport2"]

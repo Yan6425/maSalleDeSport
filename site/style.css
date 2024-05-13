@@ -25,36 +25,17 @@ titre {
     font-family: 'Georgia', serif; 
 }
 
-#deconnexion {
-    display: none;
-    width: 8em;
-    align-self: flex-end;
-}
-
-a:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-/*connexion.php*/
-#incorrect {
-    color: red;
-    display: none;
-}
-
 table {
     border-collapse: collapse;
     width: 100%;
 }
+
 th, td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
+
 th {
     background-color: #f2f2f2;
 }

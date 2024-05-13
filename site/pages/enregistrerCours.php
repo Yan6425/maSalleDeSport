@@ -1,17 +1,9 @@
-<!DOCTYPE html>
 <?php
-//session_start();
-//if (!isset($_SESSION["pseudo"]) || $_SESSION["pseudo"] != "Admin"){
-//    header("Location: ../index.php");
-//}
-include "../header.html"?>
+include "../header.php"?>
 <?php
 $infoCours = json_decode(file_get_contents("../../infoCours.json"), true);
-//if ($_POST["nom"] == "" or $_POST["prenom"] == "" or $_POST["date"] == ""){
-//    header("Location : ajouterProf.php");
-//}
 do {
-    $identifiant = rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
+    $identifiant = rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
 } while (in_array($identifiant, array_keys($infoCours)));
 $infoCours[$identifiant] = array(
     "prof" => $_POST["prof"],
@@ -21,6 +13,7 @@ $infoCours[$identifiant] = array(
     "sport" => $_POST["sport"]
 );
 file_put_contents("../../infoCours.json", json_encode($infoCours, JSON_PRETTY_PRINT));
+file_put_contents("../../fichiersCours/" . $identifiant . "-cours.json", "");
 ?>
 <a href="ajouterCours.php">Ajouter un cours</a>
 <table>

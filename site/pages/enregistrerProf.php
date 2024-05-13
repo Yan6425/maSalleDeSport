@@ -1,15 +1,7 @@
-<!DOCTYPE html>
 <?php
-//session_start();
-//if (!isset($_SESSION["pseudo"]) || $_SESSION["pseudo"] != "Admin"){
-//    header("Location: ../index.php");
-//}
-include "../header.html"?>
+include "../header.php"?>
 <?php
 $infoProfs = json_decode(file_get_contents("../../infoProfs.json"), true);
-//if ($_POST["nom"] == "" or $_POST["prenom"] == "" or $_POST["date"] == ""){
-//    header("Location : ajouterProf.php");
-//}
 $login = strtolower($_POST["prenom"])[0] . strtolower($_POST["nom"]);
 while (in_array($login, array_keys($infoProfs))) {
     $login = $login . rand(0, 9);
